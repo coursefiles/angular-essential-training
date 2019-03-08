@@ -7,21 +7,22 @@
   background-color: #29394b;
   padding: 10px;
   color: #bdc2c5;
+  margin: 0 12px 12px 0;
 }
 h2 {
   font-size: 1.6em;
   flex: 1;
 }
-:host.medium-movies {
+:host(.medium-movies) {
   border-color: #53ace4;
 }
-:host.medium-movies > h2 {
+:host(.medium-movies) > h2 {
   color: #53ace4;
 }
-:host.medium-series {
+:host(.medium-series) {
   border-color: #45bf94;
 }
-:host.medium-series > h2 {
+:host(.medium-series) > h2 {
   color: #45bf94;
 }
 .tools {
