@@ -1,6 +1,6 @@
 :host {
   display: flex;
-  min-height: 90vh;
+  height: calc(100% - 95px);
   flex-direction: column;
   padding: 10px;
 }
@@ -34,5 +34,4 @@ footer {
 footer .icon {
   width: 64px;
   height: 64px;
-  margin: 15px;
 }
