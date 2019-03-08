@@ -1,0 +1,42 @@
+{
+  "name": "angular-essential-training",
+  "version": "1.0.0",
+  "author": "Justin Schwartzenberger",
+  "description": "This project is the repository for my Angular Essential Training course on LinkedIn Learning.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coursefiles/angular-essential-training.git"
+  },
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "lint": "ng lint"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "8.0.1",
+    "@angular/common": "8.0.1",
+    "@angular/compiler": "8.0.1",
+    "@angular/core": "8.0.1",
+    "@angular/forms": "8.0.1",
+    "@angular/platform-browser": "8.0.1",
+    "@angular/platform-browser-dynamic": "8.0.1",
+    "@angular/router": "8.0.1",
+    "core-js": "2.5.4",
+    "rxjs": "6.5.2",
+    "tslib": "1.9.0",
+    "zone.js": "0.9.1"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "0.800.3",
+    "@angular/cli": "8.0.3",
+    "@angular/compiler-cli": "8.0.1",
+    "@angular/language-service": "8.0.1",
+    "@types/node": "8.9.4",
+    "codelyzer": "5.0.1",
+    "ts-node": "7.0.0",
+    "tslint": "5.11.0",
+    "typescript": "3.4.5"
+  }
+}
