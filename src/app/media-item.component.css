@@ -1,0 +1,64 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 140px;
+  height: 200px;
+  border: 2px solid;
+  background-color: #29394b;
+  padding: 10px;
+  color: #bdc2c5;
+}
+h2 {
+  font-size: 1.6em;
+  flex: 1;
+}
+:host.medium-movies {
+  border-color: #53ace4;
+}
+:host.medium-movies > h2 {
+  color: #53ace4;
+}
+:host.medium-series {
+  border-color: #45bf94;
+}
+:host.medium-series > h2 {
+  color: #45bf94;
+}
+.tools {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.favorite {
+  width: 24px;
+  height: 24px;
+  fill: #bdc2c5;
+}
+.favorite.is-favorite {
+    fill: #37ad79;
+}
+.favorite.is-favorite-hovering {
+    fill: #45bf94;
+}
+.favorite.is-favorite.is-favorite-hovering {
+    fill: #ec4342;
+}
+.delete {
+  display: block;
+  background-color: #ec4342;
+  padding: 4px;
+  font-size: .8em;
+  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
+}
+.details {
+  display: block;
+  background-color: #37ad79;
+  padding: 4px;
+  font-size: .8em;
+  border-radius: 4px;
+  color: #ffffff;
+  text-decoration: none;
+}
