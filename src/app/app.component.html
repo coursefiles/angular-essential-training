@@ -3,5 +3,7 @@
     <h1>Media Watch List</h1>
     <p class="description">Keeping track of the media I want to watch.</p>
   </header>
-  <mw-media-item [mediaItem]="firstMediaItem"></mw-media-item>
+  <mw-media-item 
+    [mediaItem]="firstMediaItem"
+    (delete)="onMediaItemDelete($event)"></mw-media-item>
 </section>
