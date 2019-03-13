@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'mw-media-item-form',
@@ -9,15 +9,17 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class MediaItemFormComponent implements OnInit {
   form: FormGroup;
 
+  constructor(private formBuilder: FormBuilder) {}
+
   ngOnInit() {
-    this.form = new FormGroup({
-      medium: new FormControl('Movies'),
-      name: new FormControl('', Validators.compose([
+    this.form = this.formBuilder.group({
+      medium: this.formBuilder.control('Movies'),
+      name: this.formBuilder.control('', Validators.compose([
         Validators.required,
         Validators.pattern('[\\w\\-\\s\\/]+')
       ])),
-      category: new FormControl(''),
-      year: new FormControl('', this.yearValidator),
+      category: this.formBuilder.control(''),
+      year: this.formBuilder.control('', this.yearValidator),
     });
   }
 
@@ -25,14 +27,14 @@ export class MediaItemFormComponent implements OnInit {
     if (control.value.trim().length === 0) {
       return null;
     }
-    let year = parseInt(control.value);
-    let minYear = 1900;
-    let maxYear = 2100;
+    const year = parseInt(control.value, 10);
+    const minYear = 1900;
+    const maxYear = 2100;
     if (year >= minYear && year <= maxYear) {
       return null;
     } else {
       return {
-        'year': {
+        year: {
           min: minYear,
           max: maxYear
         }
