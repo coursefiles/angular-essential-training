@@ -16,11 +16,14 @@ export class MediaItemListComponent implements OnInit {
     this.getMediaItems(this.medium);
   }
 
-  onMediaItemDelete(mediaItem) {
-    this.mediaItemService.delete(mediaItem);
+  onMediaItemDelete(mediaItem: MediaItem) {
+    this.mediaItemService.delete(mediaItem)
+      .subscribe(() => {
+        this.getMediaItems(this.medium);
+      });
   }
 
-  getMediaItems(medium) {
+  getMediaItems(medium: string) {
     this.medium = medium;
     this.mediaItemService.get(medium)
       .subscribe(mediaItems => {
