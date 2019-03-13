@@ -1,5 +1,5 @@
 <header>
-  <div>{{ mediaItems | categoryList }}</div>
+  <div *ngIf="mediaItems">{{ mediaItems | categoryList }}</div>
 </header>
 <section>
   <mw-media-item 
