@@ -1,22 +1,24 @@
 <header>
   <h2>Add Media to Watch</h2>
 </header>
-<form>
+<form
+  #mediaItemForm="ngForm"
+  (ngSubmit)="onSubmit(mediaItemForm.value)">
   <ul>
     <li>
       <label for="medium">Medium</label>
-      <select name="medium" id="medium">
+      <select name="medium" id="medium" ngModel>
         <option value="Movies">Movies</option>
         <option value="Series">Series</option>
       </select>
     </li>
     <li>
       <label for="name">Name</label>
-      <input type="text" name="name" id="name">
+      <input type="text" name="name" id="name" ngModel>
     </li>
     <li>
       <label for="category">Category</label>
-      <select name="category" id="category">
+      <select name="category" id="category" ngModel>
         <option value="Action">Action</option>
         <option value="Science Fiction">Science Fiction</option>
         <option value="Comedy">Comedy</option>
@@ -27,7 +29,7 @@
     </li>
     <li>
       <label for="year">Year</label>
-      <input type="text" name="year" id="year" maxlength="4">
+      <input type="text" name="year" id="year" maxlength="4" ngModel>
     </li>
   </ul>
   <button type="submit">Save</button>
