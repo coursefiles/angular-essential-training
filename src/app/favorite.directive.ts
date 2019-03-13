@@ -15,7 +15,7 @@ export class FavoriteDirective {
   @HostListener('mouseleave') onMouseLeave() {
     this.hovering = false;
   }
-  
+
   @Input() set mwFavorite(value) {
     this.isFavorite = value;
   }
