@@ -1,8 +1,11 @@
 :host {
   display: flex;
-  min-height: 90vh;
+  height: calc(100% - 95px);
   flex-direction: column;
   padding: 10px;
+}
+nav a {
+  cursor: pointer;
 }
 header {
   color: #c6c5c3;
@@ -34,5 +37,4 @@ footer {
 footer .icon {
   width: 64px;
   height: 64px;
-  margin: 15px;
 }
