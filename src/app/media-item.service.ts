@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { map, catchError } from 'rxjs/operators';
-import { Observable, of } from 'rxjs';
+import { throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MediaItemService {
   constructor(private http: HttpClient) {}
-  
+
   get(medium: string) {
-    let getOptions = {
+    const getOptions = {
       params: { medium }
     };
     return this.http.get<MediaItemsResponse>('mediaitems', getOptions)
@@ -18,34 +18,32 @@ export class MediaItemService {
         map((response: MediaItemsResponse) => {
           return response.mediaItems;
         }),
-        catchError(this.handleError<MediaItem[]>('get media items'))
+        catchError(this.handleError)
       );
   }
-  
+
   add(mediaItem: MediaItem) {
     return this.http.post('mediaitems', mediaItem)
       .pipe(
-        catchError(this.handleError<MediaItem>('add media item'))
+        catchError(this.handleError)
       );
   }
-  
+
   delete(mediaItem: MediaItem) {
     return this.http.delete(`mediaitems/${mediaItem.id}`)
     .pipe(
-      catchError(this.handleError<MediaItem>('delete media item'))
+      catchError(this.handleError)
     );
   }
 
-  private handleError<T>(operation = 'unknown', result?: T) {
-    return (error: any): Observable<T> => {
-      console.log(`Call to [${operation}] failed: ${error.message}`);
-      return of(result as T);
-    };
+  private handleError(error: HttpErrorResponse) {
+    console.error(error.message);
+    return throwError('A data error occurred, please try again.');
   }
 }
 
 interface MediaItemsResponse {
-  mediaItems: MediaItem[]
+  mediaItems: MediaItem[];
 }
 
 export interface MediaItem {
