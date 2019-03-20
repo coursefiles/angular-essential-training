@@ -1,6 +1,18 @@
 :host {
   display: flex;
   font-family: Arial, Helvetica, sans-serif;
+  min-height: 100%;
+}
+nav {
+  display: flex;
+  flex-direction: column;
+  width: 68px;
+  background-color: #53ace4;
+}
+nav .icon {
+  width: 48px;
+  height: 48px;
+  margin: 10px;
 }
 section {
   width: 100%;

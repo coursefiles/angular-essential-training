@@ -1,6 +1,6 @@
 :host {
   display: flex;
-  min-height: 90vh;
+  height: calc(100vh - 95px);
   flex-direction: column;
   padding: 10px;
 }
