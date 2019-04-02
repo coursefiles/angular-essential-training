@@ -1,11 +1,8 @@
 :host {
   display: flex;
-  font-family: Arial, Helvetica, sans-serif;
   min-height: 100%;
 }
 nav {
-  display: flex;
-  flex-direction: column;
   width: 68px;
   background-color: #53ace4;
 }
