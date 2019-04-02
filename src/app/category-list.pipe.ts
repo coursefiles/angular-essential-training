@@ -11,6 +11,6 @@ export class CategoryListPipe {
         categories.push(mediaItem.category);
       }
     });
-    return categories.join(', ');
+    return categories;
   }
 }
