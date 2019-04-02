@@ -19,7 +19,7 @@ export class MediaItemListComponent implements OnInit {
     this.activatedRoute.paramMap
       .subscribe(paramMap => {
         let medium = paramMap.get('medium');
-        if(medium.toLowerCase() === 'all') {
+        if (medium.toLowerCase() === 'all') {
           medium = '';
         }
         this.getMediaItems(medium);
