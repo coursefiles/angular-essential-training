@@ -27,3 +27,12 @@ body {
   height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.label {
+  background-color: #999999;
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-style: italic;
+  width: max-content;
+}
