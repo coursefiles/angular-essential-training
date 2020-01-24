@@ -1,5 +1,6 @@
 {
   "files.exclude": {
     "**/node_modules": {}
-  }
+  },
+  "git.ignoreLimitWarning": true
 }
