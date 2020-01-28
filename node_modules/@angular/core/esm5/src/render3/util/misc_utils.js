@@ -1,0 +1,105 @@
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+import { global } from '../../util/global';
+/**
+ * Returns whether the values are different from a change detection stand point.
+ *
+ * Constraints are relaxed in checkNoChanges mode. See `devModeEqual` for details.
+ */
+export function isDifferent(a, b) {
+    // NaN is the only value that is not equal to itself so the first
+    // test checks if both a and b are not NaN
+    return !(a !== a && b !== b) && a !== b;
+}
+/**
+ * Used for stringify render output in Ivy.
+ * Important! This function is very performance-sensitive and we should
+ * be extra careful not to introduce megamorphic reads in it.
+ */
+export function renderStringify(value) {
+    if (typeof value === 'function')
+        return value.name || value;
+    if (typeof value === 'string')
+        return value;
+    if (value == null)
+        return '';
+    return '' + value;
+}
+/**
+ * Used to stringify a value so that it can be displayed in an error message.
+ * Important! This function contains a megamorphic read and should only be
+ * used for error messages.
+ */
+export function stringifyForError(value) {
+    if (typeof value === 'object' && value != null && typeof value.type === 'function') {
+        return value.type.name || value.type;
+    }
+    return renderStringify(value);
+}
+var ɵ0 = function () {
+    return (typeof requestAnimationFrame !== 'undefined' && requestAnimationFrame || // browser only
+        setTimeout // everything else
+    ).bind(global);
+};
+export var defaultScheduler = (ɵ0)();
+/**
+ *
+ * @codeGenApi
+ */
+export function ɵɵresolveWindow(element) {
+    return { name: 'window', target: element.ownerDocument.defaultView };
+}
+/**
+ *
+ * @codeGenApi
+ */
+export function ɵɵresolveDocument(element) {
+    return { name: 'document', target: element.ownerDocument };
+}
+/**
+ *
+ * @codeGenApi
+ */
+export function ɵɵresolveBody(element) {
+    return { name: 'body', target: element.ownerDocument.body };
+}
+/**
+ * The special delimiter we use to separate property names, prefixes, and suffixes
+ * in property binding metadata. See storeBindingMetadata().
+ *
+ * We intentionally use the Unicode "REPLACEMENT CHARACTER" (U+FFFD) as a delimiter
+ * because it is a very uncommon character that is unlikely to be part of a user's
+ * property names or interpolation strings. If it is in fact used in a property
+ * binding, DebugElement.properties will not return the correct value for that
+ * binding. However, there should be no runtime effect for real applications.
+ *
+ * This character is typically rendered as a question mark inside of a diamond.
+ * See https://en.wikipedia.org/wiki/Specials_(Unicode_block)
+ *
+ */
+export var INTERPOLATION_DELIMITER = "\uFFFD";
+/**
+ * Determines whether or not the given string is a property metadata string.
+ * See storeBindingMetadata().
+ */
+export function isPropMetadataString(str) {
+    return str.indexOf(INTERPOLATION_DELIMITER) >= 0;
+}
+/**
+ * Unwrap a value which might be behind a closure (for forward declaration reasons).
+ */
+export function maybeUnwrapFn(value) {
+    if (value instanceof Function) {
+        return value();
+    }
+    else {
+        return value;
+    }
+}
+export { ɵ0 };
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWlzY191dGlscy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uL3BhY2thZ2VzL2NvcmUvc3JjL3JlbmRlcjMvdXRpbC9taXNjX3V0aWxzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7R0FNRztBQUVILE9BQU8sRUFBQyxNQUFNLEVBQUMsTUFBTSxtQkFBbUIsQ0FBQztBQUd6Qzs7OztHQUlHO0FBQ0gsTUFBTSxVQUFVLFdBQVcsQ0FBQyxDQUFNLEVBQUUsQ0FBTTtJQUN4QyxpRUFBaUU7SUFDakUsMENBQTBDO0lBQzFDLE9BQU8sQ0FBQyxDQUFDLENBQUMsS0FBSyxDQUFDLElBQUksQ0FBQyxLQUFLLENBQUMsQ0FBQyxJQUFJLENBQUMsS0FBSyxDQUFDLENBQUM7QUFDMUMsQ0FBQztBQUVEOzs7O0dBSUc7QUFDSCxNQUFNLFVBQVUsZUFBZSxDQUFDLEtBQVU7SUFDeEMsSUFBSSxPQUFPLEtBQUssS0FBSyxVQUFVO1FBQUUsT0FBTyxLQUFLLENBQUMsSUFBSSxJQUFJLEtBQUssQ0FBQztJQUM1RCxJQUFJLE9BQU8sS0FBSyxLQUFLLFFBQVE7UUFBRSxPQUFPLEtBQUssQ0FBQztJQUM1QyxJQUFJLEtBQUssSUFBSSxJQUFJO1FBQUUsT0FBTyxFQUFFLENBQUM7SUFDN0IsT0FBTyxFQUFFLEdBQUcsS0FBSyxDQUFDO0FBQ3BCLENBQUM7QUFHRDs7OztHQUlHO0FBQ0gsTUFBTSxVQUFVLGlCQUFpQixDQUFDLEtBQVU7SUFDMUMsSUFBSSxPQUFPLEtBQUssS0FBSyxRQUFRLElBQUksS0FBSyxJQUFJLElBQUksSUFBSSxPQUFPLEtBQUssQ0FBQyxJQUFJLEtBQUssVUFBVSxFQUFFO1FBQ2xGLE9BQU8sS0FBSyxDQUFDLElBQUksQ0FBQyxJQUFJLElBQUksS0FBSyxDQUFDLElBQUksQ0FBQztLQUN0QztJQUVELE9BQU8sZUFBZSxDQUFDLEtBQUssQ0FBQyxDQUFDO0FBQ2hDLENBQUM7U0FJSTtJQUNJLE9BQUEsQ0FBQyxPQUFPLHFCQUFxQixLQUFLLFdBQVcsSUFBSSxxQkFBcUIsSUFBSyxlQUFlO1FBQ3pGLFVBQVUsQ0FBRSxrQkFBa0I7S0FDN0IsQ0FBQyxJQUFJLENBQUMsTUFBTSxDQUFDO0FBRmYsQ0FFZTtBQUp4QixNQUFNLENBQUMsSUFBTSxnQkFBZ0IsR0FDekIsSUFHcUIsRUFBRSxDQUFDO0FBRTVCOzs7R0FHRztBQUNILE1BQU0sVUFBVSxlQUFlLENBQUMsT0FBNkM7SUFDM0UsT0FBTyxFQUFDLElBQUksRUFBRSxRQUFRLEVBQUUsTUFBTSxFQUFFLE9BQU8sQ0FBQyxhQUFhLENBQUMsV0FBVyxFQUFDLENBQUM7QUFDckUsQ0FBQztBQUVEOzs7R0FHRztBQUNILE1BQU0sVUFBVSxpQkFBaUIsQ0FBQyxPQUE2QztJQUM3RSxPQUFPLEVBQUMsSUFBSSxFQUFFLFVBQVUsRUFBRSxNQUFNLEVBQUUsT0FBTyxDQUFDLGFBQWEsRUFBQyxDQUFDO0FBQzNELENBQUM7QUFFRDs7O0dBR0c7QUFDSCxNQUFNLFVBQVUsYUFBYSxDQUFDLE9BQTZDO0lBQ3pFLE9BQU8sRUFBQyxJQUFJLEVBQUUsTUFBTSxFQUFFLE1BQU0sRUFBRSxPQUFPLENBQUMsYUFBYSxDQUFDLElBQUksRUFBQyxDQUFDO0FBQzVELENBQUM7QUFFRDs7Ozs7Ozs7Ozs7OztHQWFHO0FBQ0gsTUFBTSxDQUFDLElBQU0sdUJBQXVCLEdBQUcsUUFBRyxDQUFDO0FBRTNDOzs7R0FHRztBQUNILE1BQU0sVUFBVSxvQkFBb0IsQ0FBQyxHQUFXO0lBQzlDLE9BQU8sR0FBRyxDQUFDLE9BQU8sQ0FBQyx1QkFBdUIsQ0FBQyxJQUFJLENBQUMsQ0FBQztBQUNuRCxDQUFDO0FBRUQ7O0dBRUc7QUFDSCxNQUFNLFVBQVUsYUFBYSxDQUFJLEtBQW9CO0lBQ25ELElBQUksS0FBSyxZQUFZLFFBQVEsRUFBRTtRQUM3QixPQUFPLEtBQUssRUFBRSxDQUFDO0tBQ2hCO1NBQU07UUFDTCxPQUFPLEtBQUssQ0FBQztLQUNkO0FBQ0gsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbIi8qKlxuICogQGxpY2Vuc2VcbiAqIENvcHlyaWdodCBHb29nbGUgSW5jLiBBbGwgUmlnaHRzIFJlc2VydmVkLlxuICpcbiAqIFVzZSBvZiB0aGlzIHNvdXJjZSBjb2RlIGlzIGdvdmVybmVkIGJ5IGFuIE1JVC1zdHlsZSBsaWNlbnNlIHRoYXQgY2FuIGJlXG4gKiBmb3VuZCBpbiB0aGUgTElDRU5TRSBmaWxlIGF0IGh0dHBzOi8vYW5ndWxhci5pby9saWNlbnNlXG4gKi9cblxuaW1wb3J0IHtnbG9iYWx9IGZyb20gJy4uLy4uL3V0aWwvZ2xvYmFsJztcbmltcG9ydCB7UkVsZW1lbnR9IGZyb20gJy4uL2ludGVyZmFjZXMvcmVuZGVyZXInO1xuXG4vKipcbiAqIFJldHVybnMgd2hldGhlciB0aGUgdmFsdWVzIGFyZSBkaWZmZXJlbnQgZnJvbSBhIGNoYW5nZSBkZXRlY3Rpb24gc3RhbmQgcG9pbnQuXG4gKlxuICogQ29uc3RyYWludHMgYXJlIHJlbGF4ZWQgaW4gY2hlY2tOb0NoYW5nZXMgbW9kZS4gU2VlIGBkZXZNb2RlRXF1YWxgIGZvciBkZXRhaWxzLlxuICovXG5leHBvcnQgZnVuY3Rpb24gaXNEaWZmZXJlbnQoYTogYW55LCBiOiBhbnkpOiBib29sZWFuIHtcbiAgLy8gTmFOIGlzIHRoZSBvbmx5IHZhbHVlIHRoYXQgaXMgbm90IGVxdWFsIHRvIGl0c2VsZiBzbyB0aGUgZmlyc3RcbiAgLy8gdGVzdCBjaGVja3MgaWYgYm90aCBhIGFuZCBiIGFyZSBub3QgTmFOXG4gIHJldHVybiAhKGEgIT09IGEgJiYgYiAhPT0gYikgJiYgYSAhPT0gYjtcbn1cblxuLyoqXG4gKiBVc2VkIGZvciBzdHJpbmdpZnkgcmVuZGVyIG91dHB1dCBpbiBJdnkuXG4gKiBJbXBvcnRhbnQhIFRoaXMgZnVuY3Rpb24gaXMgdmVyeSBwZXJmb3JtYW5jZS1zZW5zaXRpdmUgYW5kIHdlIHNob3VsZFxuICogYmUgZXh0cmEgY2FyZWZ1bCBub3QgdG8gaW50cm9kdWNlIG1lZ2Ftb3JwaGljIHJlYWRzIGluIGl0LlxuICovXG5leHBvcnQgZnVuY3Rpb24gcmVuZGVyU3RyaW5naWZ5KHZhbHVlOiBhbnkpOiBzdHJpbmcge1xuICBpZiAodHlwZW9mIHZhbHVlID09PSAnZnVuY3Rpb24nKSByZXR1cm4gdmFsdWUubmFtZSB8fCB2YWx1ZTtcbiAgaWYgKHR5cGVvZiB2YWx1ZSA9PT0gJ3N0cmluZycpIHJldHVybiB2YWx1ZTtcbiAgaWYgKHZhbHVlID09IG51bGwpIHJldHVybiAnJztcbiAgcmV0dXJuICcnICsgdmFsdWU7XG59XG5cblxuLyoqXG4gKiBVc2VkIHRvIHN0cmluZ2lmeSBhIHZhbHVlIHNvIHRoYXQgaXQgY2FuIGJlIGRpc3BsYXllZCBpbiBhbiBlcnJvciBtZXNzYWdlLlxuICogSW1wb3J0YW50ISBUaGlzIGZ1bmN0aW9uIGNvbnRhaW5zIGEgbWVnYW1vcnBoaWMgcmVhZCBhbmQgc2hvdWxkIG9ubHkgYmVcbiAqIHVzZWQgZm9yIGVycm9yIG1lc3NhZ2VzLlxuICovXG5leHBvcnQgZnVuY3Rpb24gc3RyaW5naWZ5Rm9yRXJyb3IodmFsdWU6IGFueSkge1xuICBpZiAodHlwZW9mIHZhbHVlID09PSAnb2JqZWN0JyAmJiB2YWx1ZSAhPSBudWxsICYmIHR5cGVvZiB2YWx1ZS50eXBlID09PSAnZnVuY3Rpb24nKSB7XG4gICAgcmV0dXJuIHZhbHVlLnR5cGUubmFtZSB8fCB2YWx1ZS50eXBlO1xuICB9XG5cbiAgcmV0dXJuIHJlbmRlclN0cmluZ2lmeSh2YWx1ZSk7XG59XG5cblxuZXhwb3J0IGNvbnN0IGRlZmF1bHRTY2hlZHVsZXIgPVxuICAgICgoKSA9PlxuICAgICAgICAgKHR5cGVvZiByZXF1ZXN0QW5pbWF0aW9uRnJhbWUgIT09ICd1bmRlZmluZWQnICYmIHJlcXVlc3RBbmltYXRpb25GcmFtZSB8fCAgLy8gYnJvd3NlciBvbmx5XG4gICAgICAgICAgc2V0VGltZW91dCAgLy8gZXZlcnl0aGluZyBlbHNlXG4gICAgICAgICAgKS5iaW5kKGdsb2JhbCkpKCk7XG5cbi8qKlxuICpcbiAqIEBjb2RlR2VuQXBpXG4gKi9cbmV4cG9ydCBmdW5jdGlvbiDJtcm1cmVzb2x2ZVdpbmRvdyhlbGVtZW50OiBSRWxlbWVudCAmIHtvd25lckRvY3VtZW50OiBEb2N1bWVudH0pIHtcbiAgcmV0dXJuIHtuYW1lOiAnd2luZG93JywgdGFyZ2V0OiBlbGVtZW50Lm93bmVyRG9jdW1lbnQuZGVmYXVsdFZpZXd9O1xufVxuXG4vKipcbiAqXG4gKiBAY29kZUdlbkFwaVxuICovXG5leHBvcnQgZnVuY3Rpb24gybXJtXJlc29sdmVEb2N1bWVudChlbGVtZW50OiBSRWxlbWVudCAmIHtvd25lckRvY3VtZW50OiBEb2N1bWVudH0pIHtcbiAgcmV0dXJuIHtuYW1lOiAnZG9jdW1lbnQnLCB0YXJnZXQ6IGVsZW1lbnQub3duZXJEb2N1bWVudH07XG59XG5cbi8qKlxuICpcbiAqIEBjb2RlR2VuQXBpXG4gKi9cbmV4cG9ydCBmdW5jdGlvbiDJtcm1cmVzb2x2ZUJvZHkoZWxlbWVudDogUkVsZW1lbnQgJiB7b3duZXJEb2N1bWVudDogRG9jdW1lbnR9KSB7XG4gIHJldHVybiB7bmFtZTogJ2JvZHknLCB0YXJnZXQ6IGVsZW1lbnQub3duZXJEb2N1bWVudC5ib2R5fTtcbn1cblxuLyoqXG4gKiBUaGUgc3BlY2lhbCBkZWxpbWl0ZXIgd2UgdXNlIHRvIHNlcGFyYXRlIHByb3BlcnR5IG5hbWVzLCBwcmVmaXhlcywgYW5kIHN1ZmZpeGVzXG4gKiBpbiBwcm9wZXJ0eSBiaW5kaW5nIG1ldGFkYXRhLiBTZWUgc3RvcmVCaW5kaW5nTWV0YWRhdGEoKS5cbiAqXG4gKiBXZSBpbnRlbnRpb25hbGx5IHVzZSB0aGUgVW5pY29kZSBcIlJFUExBQ0VNRU5UIENIQVJBQ1RFUlwiIChVK0ZGRkQpIGFzIGEgZGVsaW1pdGVyXG4gKiBiZWNhdXNlIGl0IGlzIGEgdmVyeSB1bmNvbW1vbiBjaGFyYWN0ZXIgdGhhdCBpcyB1bmxpa2VseSB0byBiZSBwYXJ0IG9mIGEgdXNlcidzXG4gKiBwcm9wZXJ0eSBuYW1lcyBvciBpbnRlcnBvbGF0aW9uIHN0cmluZ3MuIElmIGl0IGlzIGluIGZhY3QgdXNlZCBpbiBhIHByb3BlcnR5XG4gKiBiaW5kaW5nLCBEZWJ1Z0VsZW1lbnQucHJvcGVydGllcyB3aWxsIG5vdCByZXR1cm4gdGhlIGNvcnJlY3QgdmFsdWUgZm9yIHRoYXRcbiAqIGJpbmRpbmcuIEhvd2V2ZXIsIHRoZXJlIHNob3VsZCBiZSBubyBydW50aW1lIGVmZmVjdCBmb3IgcmVhbCBhcHBsaWNhdGlvbnMuXG4gKlxuICogVGhpcyBjaGFyYWN0ZXIgaXMgdHlwaWNhbGx5IHJlbmRlcmVkIGFzIGEgcXVlc3Rpb24gbWFyayBpbnNpZGUgb2YgYSBkaWFtb25kLlxuICogU2VlIGh0dHBzOi8vZW4ud2lraXBlZGlhLm9yZy93aWtpL1NwZWNpYWxzXyhVbmljb2RlX2Jsb2NrKVxuICpcbiAqL1xuZXhwb3J0IGNvbnN0IElOVEVSUE9MQVRJT05fREVMSU1JVEVSID0gYO+/vWA7XG5cbi8qKlxuICogRGV0ZXJtaW5lcyB3aGV0aGVyIG9yIG5vdCB0aGUgZ2l2ZW4gc3RyaW5nIGlzIGEgcHJvcGVydHkgbWV0YWRhdGEgc3RyaW5nLlxuICogU2VlIHN0b3JlQmluZGluZ01ldGFkYXRhKCkuXG4gKi9cbmV4cG9ydCBmdW5jdGlvbiBpc1Byb3BNZXRhZGF0YVN0cmluZyhzdHI6IHN0cmluZyk6IGJvb2xlYW4ge1xuICByZXR1cm4gc3RyLmluZGV4T2YoSU5URVJQT0xBVElPTl9ERUxJTUlURVIpID49IDA7XG59XG5cbi8qKlxuICogVW53cmFwIGEgdmFsdWUgd2hpY2ggbWlnaHQgYmUgYmVoaW5kIGEgY2xvc3VyZSAoZm9yIGZvcndhcmQgZGVjbGFyYXRpb24gcmVhc29ucykuXG4gKi9cbmV4cG9ydCBmdW5jdGlvbiBtYXliZVVud3JhcEZuPFQ+KHZhbHVlOiBUIHwgKCgpID0+IFQpKTogVCB7XG4gIGlmICh2YWx1ZSBpbnN0YW5jZW9mIEZ1bmN0aW9uKSB7XG4gICAgcmV0dXJuIHZhbHVlKCk7XG4gIH0gZWxzZSB7XG4gICAgcmV0dXJuIHZhbHVlO1xuICB9XG59XG4iXX0=

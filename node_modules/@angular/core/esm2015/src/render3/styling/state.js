@@ -1,0 +1,27 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/** @type {?} */
+let stylingContext = null;
+/**
+ * Gets the most recent styling context value.
+ *
+ * Note that only one styling context is stored at a given time.
+ * @return {?}
+ */
+export function getCachedStylingContext() {
+    return stylingContext;
+}
+/**
+ * Sets the most recent styling context value.
+ *
+ * Note that only one styling context is stored at a given time.
+ *
+ * @param {?} context The styling context value that will be stored
+ * @return {?}
+ */
+export function setCachedStylingContext(context) {
+    stylingContext = context;
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3RhdGUuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi8uLi8uLi8uLi9wYWNrYWdlcy9jb3JlL3NyYy9yZW5kZXIzL3N0eWxpbmcvc3RhdGUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7SUFTSSxjQUFjLEdBQXdCLElBQUk7Ozs7Ozs7QUFPOUMsTUFBTSxVQUFVLHVCQUF1QjtJQUNyQyxPQUFPLGNBQWMsQ0FBQztBQUN4QixDQUFDOzs7Ozs7Ozs7QUFTRCxNQUFNLFVBQVUsdUJBQXVCLENBQUMsT0FBOEI7SUFDcEUsY0FBYyxHQUFHLE9BQU8sQ0FBQztBQUMzQixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiLyoqXG4gKiBAbGljZW5zZVxuICogQ29weXJpZ2h0IEdvb2dsZSBJbmMuIEFsbCBSaWdodHMgUmVzZXJ2ZWQuXG4gKlxuICogVXNlIG9mIHRoaXMgc291cmNlIGNvZGUgaXMgZ292ZXJuZWQgYnkgYW4gTUlULXN0eWxlIGxpY2Vuc2UgdGhhdCBjYW4gYmVcbiAqIGZvdW5kIGluIHRoZSBMSUNFTlNFIGZpbGUgYXQgaHR0cHM6Ly9hbmd1bGFyLmlvL2xpY2Vuc2VcbiAqL1xuaW1wb3J0IHtTdHlsaW5nQ29udGV4dH0gZnJvbSAnLi4vaW50ZXJmYWNlcy9zdHlsaW5nJztcblxubGV0IHN0eWxpbmdDb250ZXh0OiBTdHlsaW5nQ29udGV4dHxudWxsID0gbnVsbDtcblxuLyoqXG4gKiBHZXRzIHRoZSBtb3N0IHJlY2VudCBzdHlsaW5nIGNvbnRleHQgdmFsdWUuXG4gKlxuICogTm90ZSB0aGF0IG9ubHkgb25lIHN0eWxpbmcgY29udGV4dCBpcyBzdG9yZWQgYXQgYSBnaXZlbiB0aW1lLlxuICovXG5leHBvcnQgZnVuY3Rpb24gZ2V0Q2FjaGVkU3R5bGluZ0NvbnRleHQoKSB7XG4gIHJldHVybiBzdHlsaW5nQ29udGV4dDtcbn1cblxuLyoqXG4gKiBTZXRzIHRoZSBtb3N0IHJlY2VudCBzdHlsaW5nIGNvbnRleHQgdmFsdWUuXG4gKlxuICogTm90ZSB0aGF0IG9ubHkgb25lIHN0eWxpbmcgY29udGV4dCBpcyBzdG9yZWQgYXQgYSBnaXZlbiB0aW1lLlxuICpcbiAqIEBwYXJhbSBjb250ZXh0IFRoZSBzdHlsaW5nIGNvbnRleHQgdmFsdWUgdGhhdCB3aWxsIGJlIHN0b3JlZFxuICovXG5leHBvcnQgZnVuY3Rpb24gc2V0Q2FjaGVkU3R5bGluZ0NvbnRleHQoY29udGV4dDogU3R5bGluZ0NvbnRleHQgfCBudWxsKSB7XG4gIHN0eWxpbmdDb250ZXh0ID0gY29udGV4dDtcbn1cbiJdfQ==

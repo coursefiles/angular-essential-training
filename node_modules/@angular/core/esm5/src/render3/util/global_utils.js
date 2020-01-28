@@ -1,0 +1,64 @@
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+import { assertDefined } from '../../util/assert';
+import { global } from '../../util/global';
+import { getComponent, getContext, getDirectives, getHostElement, getInjector, getListeners, getPlayers, getRootComponents, getViewComponent, markDirty } from '../global_utils_api';
+/**
+ * This file introduces series of globally accessible debug tools
+ * to allow for the Angular debugging story to function.
+ *
+ * To see this in action run the following command:
+ *
+ *   bazel run --define=compile=aot
+ *   //packages/core/test/bundling/todo:devserver
+ *
+ *  Then load `localhost:5432` and start using the console tools.
+ */
+/**
+ * This value reflects the property on the window where the dev
+ * tools are patched (window.ng).
+ * */
+export var GLOBAL_PUBLISH_EXPANDO_KEY = 'ng';
+var _published = false;
+/**
+ * Publishes a collection of default debug tools onto`window.ng`.
+ *
+ * These functions are available globally when Angular is in development
+ * mode and are automatically stripped away from prod mode is on.
+ */
+export function publishDefaultGlobalUtils() {
+    if (!_published) {
+        _published = true;
+        publishGlobalUtil('getComponent', getComponent);
+        publishGlobalUtil('getContext', getContext);
+        publishGlobalUtil('getListeners', getListeners);
+        publishGlobalUtil('getViewComponent', getViewComponent);
+        publishGlobalUtil('getHostElement', getHostElement);
+        publishGlobalUtil('getInjector', getInjector);
+        publishGlobalUtil('getRootComponents', getRootComponents);
+        publishGlobalUtil('getDirectives', getDirectives);
+        publishGlobalUtil('getPlayers', getPlayers);
+        publishGlobalUtil('markDirty', markDirty);
+    }
+}
+/**
+ * Publishes the given function to `window.ng` so that it can be
+ * used from the browser console when an application is not in production.
+ */
+export function publishGlobalUtil(name, fn) {
+    var w = global;
+    ngDevMode && assertDefined(fn, 'function not defined');
+    if (w) {
+        var container = w[GLOBAL_PUBLISH_EXPANDO_KEY];
+        if (!container) {
+            container = w[GLOBAL_PUBLISH_EXPANDO_KEY] = {};
+        }
+        container[name] = fn;
+    }
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZ2xvYmFsX3V0aWxzLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vcGFja2FnZXMvY29yZS9zcmMvcmVuZGVyMy91dGlsL2dsb2JhbF91dGlscy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7O0dBTUc7QUFDSCxPQUFPLEVBQUMsYUFBYSxFQUFDLE1BQU0sbUJBQW1CLENBQUM7QUFDaEQsT0FBTyxFQUFDLE1BQU0sRUFBQyxNQUFNLG1CQUFtQixDQUFDO0FBRXpDLE9BQU8sRUFBQyxZQUFZLEVBQUUsVUFBVSxFQUFFLGFBQWEsRUFBRSxjQUFjLEVBQUUsV0FBVyxFQUFFLFlBQVksRUFBRSxVQUFVLEVBQUUsaUJBQWlCLEVBQUUsZ0JBQWdCLEVBQUUsU0FBUyxFQUFDLE1BQU0scUJBQXFCLENBQUM7QUFJbkw7Ozs7Ozs7Ozs7R0FVRztBQUVIOzs7S0FHSztBQUNMLE1BQU0sQ0FBQyxJQUFNLDBCQUEwQixHQUFHLElBQUksQ0FBQztBQUUvQyxJQUFJLFVBQVUsR0FBRyxLQUFLLENBQUM7QUFDdkI7Ozs7O0dBS0c7QUFDSCxNQUFNLFVBQVUseUJBQXlCO0lBQ3ZDLElBQUksQ0FBQyxVQUFVLEVBQUU7UUFDZixVQUFVLEdBQUcsSUFBSSxDQUFDO1FBQ2xCLGlCQUFpQixDQUFDLGNBQWMsRUFBRSxZQUFZLENBQUMsQ0FBQztRQUNoRCxpQkFBaUIsQ0FBQyxZQUFZLEVBQUUsVUFBVSxDQUFDLENBQUM7UUFDNUMsaUJBQWlCLENBQUMsY0FBYyxFQUFFLFlBQVksQ0FBQyxDQUFDO1FBQ2hELGlCQUFpQixDQUFDLGtCQUFrQixFQUFFLGdCQUFnQixDQUFDLENBQUM7UUFDeEQsaUJBQWlCLENBQUMsZ0JBQWdCLEVBQUUsY0FBYyxDQUFDLENBQUM7UUFDcEQsaUJBQWlCLENBQUMsYUFBYSxFQUFFLFdBQVcsQ0FBQyxDQUFDO1FBQzlDLGlCQUFpQixDQUFDLG1CQUFtQixFQUFFLGlCQUFpQixDQUFDLENBQUM7UUFDMUQsaUJBQWlCLENBQUMsZUFBZSxFQUFFLGFBQWEsQ0FBQyxDQUFDO1FBQ2xELGlCQUFpQixDQUFDLFlBQVksRUFBRSxVQUFVLENBQUMsQ0FBQztRQUM1QyxpQkFBaUIsQ0FBQyxXQUFXLEVBQUUsU0FBUyxDQUFDLENBQUM7S0FDM0M7QUFDSCxDQUFDO0FBTUQ7OztHQUdHO0FBQ0gsTUFBTSxVQUFVLGlCQUFpQixDQUFDLElBQVksRUFBRSxFQUFZO0lBQzFELElBQU0sQ0FBQyxHQUFHLE1BQXVDLENBQUM7SUFDbEQsU0FBUyxJQUFJLGFBQWEsQ0FBQyxFQUFFLEVBQUUsc0JBQXNCLENBQUMsQ0FBQztJQUN2RCxJQUFJLENBQUMsRUFBRTtRQUNMLElBQUksU0FBUyxHQUFHLENBQUMsQ0FBQywwQkFBMEIsQ0FBQyxDQUFDO1FBQzlDLElBQUksQ0FBQyxTQUFTLEVBQUU7WUFDZCxTQUFTLEdBQUcsQ0FBQyxDQUFDLDBCQUEwQixDQUFDLEdBQUcsRUFBRSxDQUFDO1NBQ2hEO1FBQ0QsU0FBUyxDQUFDLElBQUksQ0FBQyxHQUFHLEVBQUUsQ0FBQztLQUN0QjtBQUNILENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIEBsaWNlbnNlXG4gKiBDb3B5cmlnaHQgR29vZ2xlIEluYy4gQWxsIFJpZ2h0cyBSZXNlcnZlZC5cbiAqXG4gKiBVc2Ugb2YgdGhpcyBzb3VyY2UgY29kZSBpcyBnb3Zlcm5lZCBieSBhbiBNSVQtc3R5bGUgbGljZW5zZSB0aGF0IGNhbiBiZVxuICogZm91bmQgaW4gdGhlIExJQ0VOU0UgZmlsZSBhdCBodHRwczovL2FuZ3VsYXIuaW8vbGljZW5zZVxuICovXG5pbXBvcnQge2Fzc2VydERlZmluZWR9IGZyb20gJy4uLy4uL3V0aWwvYXNzZXJ0JztcbmltcG9ydCB7Z2xvYmFsfSBmcm9tICcuLi8uLi91dGlsL2dsb2JhbCc7XG5cbmltcG9ydCB7Z2V0Q29tcG9uZW50LCBnZXRDb250ZXh0LCBnZXREaXJlY3RpdmVzLCBnZXRIb3N0RWxlbWVudCwgZ2V0SW5qZWN0b3IsIGdldExpc3RlbmVycywgZ2V0UGxheWVycywgZ2V0Um9vdENvbXBvbmVudHMsIGdldFZpZXdDb21wb25lbnQsIG1hcmtEaXJ0eX0gZnJvbSAnLi4vZ2xvYmFsX3V0aWxzX2FwaSc7XG5cblxuXG4vKipcbiAqIFRoaXMgZmlsZSBpbnRyb2R1Y2VzIHNlcmllcyBvZiBnbG9iYWxseSBhY2Nlc3NpYmxlIGRlYnVnIHRvb2xzXG4gKiB0byBhbGxvdyBmb3IgdGhlIEFuZ3VsYXIgZGVidWdnaW5nIHN0b3J5IHRvIGZ1bmN0aW9uLlxuICpcbiAqIFRvIHNlZSB0aGlzIGluIGFjdGlvbiBydW4gdGhlIGZvbGxvd2luZyBjb21tYW5kOlxuICpcbiAqICAgYmF6ZWwgcnVuIC0tZGVmaW5lPWNvbXBpbGU9YW90XG4gKiAgIC8vcGFja2FnZXMvY29yZS90ZXN0L2J1bmRsaW5nL3RvZG86ZGV2c2VydmVyXG4gKlxuICogIFRoZW4gbG9hZCBgbG9jYWxob3N0OjU0MzJgIGFuZCBzdGFydCB1c2luZyB0aGUgY29uc29sZSB0b29scy5cbiAqL1xuXG4vKipcbiAqIFRoaXMgdmFsdWUgcmVmbGVjdHMgdGhlIHByb3BlcnR5IG9uIHRoZSB3aW5kb3cgd2hlcmUgdGhlIGRldlxuICogdG9vbHMgYXJlIHBhdGNoZWQgKHdpbmRvdy5uZykuXG4gKiAqL1xuZXhwb3J0IGNvbnN0IEdMT0JBTF9QVUJMSVNIX0VYUEFORE9fS0VZID0gJ25nJztcblxubGV0IF9wdWJsaXNoZWQgPSBmYWxzZTtcbi8qKlxuICogUHVibGlzaGVzIGEgY29sbGVjdGlvbiBvZiBkZWZhdWx0IGRlYnVnIHRvb2xzIG9udG9gd2luZG93Lm5nYC5cbiAqXG4gKiBUaGVzZSBmdW5jdGlvbnMgYXJlIGF2YWlsYWJsZSBnbG9iYWxseSB3aGVuIEFuZ3VsYXIgaXMgaW4gZGV2ZWxvcG1lbnRcbiAqIG1vZGUgYW5kIGFyZSBhdXRvbWF0aWNhbGx5IHN0cmlwcGVkIGF3YXkgZnJvbSBwcm9kIG1vZGUgaXMgb24uXG4gKi9cbmV4cG9ydCBmdW5jdGlvbiBwdWJsaXNoRGVmYXVsdEdsb2JhbFV0aWxzKCkge1xuICBpZiAoIV9wdWJsaXNoZWQpIHtcbiAgICBfcHVibGlzaGVkID0gdHJ1ZTtcbiAgICBwdWJsaXNoR2xvYmFsVXRpbCgnZ2V0Q29tcG9uZW50JywgZ2V0Q29tcG9uZW50KTtcbiAgICBwdWJsaXNoR2xvYmFsVXRpbCgnZ2V0Q29udGV4dCcsIGdldENvbnRleHQpO1xuICAgIHB1Ymxpc2hHbG9iYWxVdGlsKCdnZXRMaXN0ZW5lcnMnLCBnZXRMaXN0ZW5lcnMpO1xuICAgIHB1Ymxpc2hHbG9iYWxVdGlsKCdnZXRWaWV3Q29tcG9uZW50JywgZ2V0Vmlld0NvbXBvbmVudCk7XG4gICAgcHVibGlzaEdsb2JhbFV0aWwoJ2dldEhvc3RFbGVtZW50JywgZ2V0SG9zdEVsZW1lbnQpO1xuICAgIHB1Ymxpc2hHbG9iYWxVdGlsKCdnZXRJbmplY3RvcicsIGdldEluamVjdG9yKTtcbiAgICBwdWJsaXNoR2xvYmFsVXRpbCgnZ2V0Um9vdENvbXBvbmVudHMnLCBnZXRSb290Q29tcG9uZW50cyk7XG4gICAgcHVibGlzaEdsb2JhbFV0aWwoJ2dldERpcmVjdGl2ZXMnLCBnZXREaXJlY3RpdmVzKTtcbiAgICBwdWJsaXNoR2xvYmFsVXRpbCgnZ2V0UGxheWVycycsIGdldFBsYXllcnMpO1xuICAgIHB1Ymxpc2hHbG9iYWxVdGlsKCdtYXJrRGlydHknLCBtYXJrRGlydHkpO1xuICB9XG59XG5cbmV4cG9ydCBkZWNsYXJlIHR5cGUgR2xvYmFsRGV2TW9kZUNvbnRhaW5lciA9IHtcbiAgW0dMT0JBTF9QVUJMSVNIX0VYUEFORE9fS0VZXToge1tmbk5hbWU6IHN0cmluZ106IEZ1bmN0aW9ufTtcbn07XG5cbi8qKlxuICogUHVibGlzaGVzIHRoZSBnaXZlbiBmdW5jdGlvbiB0byBgd2luZG93Lm5nYCBzbyB0aGF0IGl0IGNhbiBiZVxuICogdXNlZCBmcm9tIHRoZSBicm93c2VyIGNvbnNvbGUgd2hlbiBhbiBhcHBsaWNhdGlvbiBpcyBub3QgaW4gcHJvZHVjdGlvbi5cbiAqL1xuZXhwb3J0IGZ1bmN0aW9uIHB1Ymxpc2hHbG9iYWxVdGlsKG5hbWU6IHN0cmluZywgZm46IEZ1bmN0aW9uKTogdm9pZCB7XG4gIGNvbnN0IHcgPSBnbG9iYWwgYXMgYW55IGFzIEdsb2JhbERldk1vZGVDb250YWluZXI7XG4gIG5nRGV2TW9kZSAmJiBhc3NlcnREZWZpbmVkKGZuLCAnZnVuY3Rpb24gbm90IGRlZmluZWQnKTtcbiAgaWYgKHcpIHtcbiAgICBsZXQgY29udGFpbmVyID0gd1tHTE9CQUxfUFVCTElTSF9FWFBBTkRPX0tFWV07XG4gICAgaWYgKCFjb250YWluZXIpIHtcbiAgICAgIGNvbnRhaW5lciA9IHdbR0xPQkFMX1BVQkxJU0hfRVhQQU5ET19LRVldID0ge307XG4gICAgfVxuICAgIGNvbnRhaW5lcltuYW1lXSA9IGZuO1xuICB9XG59XG4iXX0=

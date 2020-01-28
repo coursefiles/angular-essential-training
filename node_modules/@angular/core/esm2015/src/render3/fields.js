@@ -1,0 +1,31 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+import { getClosureSafeProperty } from '../util/property';
+/** @type {?} */
+export const NG_COMPONENT_DEF = getClosureSafeProperty({ ngComponentDef: getClosureSafeProperty });
+/** @type {?} */
+export const NG_DIRECTIVE_DEF = getClosureSafeProperty({ ngDirectiveDef: getClosureSafeProperty });
+/** @type {?} */
+export const NG_PIPE_DEF = getClosureSafeProperty({ ngPipeDef: getClosureSafeProperty });
+/** @type {?} */
+export const NG_MODULE_DEF = getClosureSafeProperty({ ngModuleDef: getClosureSafeProperty });
+/** @type {?} */
+export const NG_BASE_DEF = getClosureSafeProperty({ ngBaseDef: getClosureSafeProperty });
+// TODO(misko): This is wrong. The NG_ELEMENT_ID should never be minified.
+/**
+ * If a directive is diPublic, bloomAdd sets a property on the type with this constant as
+ * the key and the directive's unique ID as the value. This allows us to map directives to their
+ * bloom filter bit for DI.
+ * @type {?}
+ */
+export const NG_ELEMENT_ID = getClosureSafeProperty({ __NG_ELEMENT_ID__: getClosureSafeProperty });
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZmllbGRzLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vLi4vLi4vcGFja2FnZXMvY29yZS9zcmMvcmVuZGVyMy9maWVsZHMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7QUFRQSxPQUFPLEVBQUMsc0JBQXNCLEVBQUMsTUFBTSxrQkFBa0IsQ0FBQzs7QUFFeEQsTUFBTSxPQUFPLGdCQUFnQixHQUFHLHNCQUFzQixDQUFDLEVBQUMsY0FBYyxFQUFFLHNCQUFzQixFQUFDLENBQUM7O0FBQ2hHLE1BQU0sT0FBTyxnQkFBZ0IsR0FBRyxzQkFBc0IsQ0FBQyxFQUFDLGNBQWMsRUFBRSxzQkFBc0IsRUFBQyxDQUFDOztBQUNoRyxNQUFNLE9BQU8sV0FBVyxHQUFHLHNCQUFzQixDQUFDLEVBQUMsU0FBUyxFQUFFLHNCQUFzQixFQUFDLENBQUM7O0FBQ3RGLE1BQU0sT0FBTyxhQUFhLEdBQUcsc0JBQXNCLENBQUMsRUFBQyxXQUFXLEVBQUUsc0JBQXNCLEVBQUMsQ0FBQzs7QUFDMUYsTUFBTSxPQUFPLFdBQVcsR0FBRyxzQkFBc0IsQ0FBQyxFQUFDLFNBQVMsRUFBRSxzQkFBc0IsRUFBQyxDQUFDOzs7Ozs7OztBQVF0RixNQUFNLE9BQU8sYUFBYSxHQUFHLHNCQUFzQixDQUFDLEVBQUMsaUJBQWlCLEVBQUUsc0JBQXNCLEVBQUMsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbIi8qKlxuICogQGxpY2Vuc2VcbiAqIENvcHlyaWdodCBHb29nbGUgSW5jLiBBbGwgUmlnaHRzIFJlc2VydmVkLlxuICpcbiAqIFVzZSBvZiB0aGlzIHNvdXJjZSBjb2RlIGlzIGdvdmVybmVkIGJ5IGFuIE1JVC1zdHlsZSBsaWNlbnNlIHRoYXQgY2FuIGJlXG4gKiBmb3VuZCBpbiB0aGUgTElDRU5TRSBmaWxlIGF0IGh0dHBzOi8vYW5ndWxhci5pby9saWNlbnNlXG4gKi9cblxuaW1wb3J0IHtnZXRDbG9zdXJlU2FmZVByb3BlcnR5fSBmcm9tICcuLi91dGlsL3Byb3BlcnR5JztcblxuZXhwb3J0IGNvbnN0IE5HX0NPTVBPTkVOVF9ERUYgPSBnZXRDbG9zdXJlU2FmZVByb3BlcnR5KHtuZ0NvbXBvbmVudERlZjogZ2V0Q2xvc3VyZVNhZmVQcm9wZXJ0eX0pO1xuZXhwb3J0IGNvbnN0IE5HX0RJUkVDVElWRV9ERUYgPSBnZXRDbG9zdXJlU2FmZVByb3BlcnR5KHtuZ0RpcmVjdGl2ZURlZjogZ2V0Q2xvc3VyZVNhZmVQcm9wZXJ0eX0pO1xuZXhwb3J0IGNvbnN0IE5HX1BJUEVfREVGID0gZ2V0Q2xvc3VyZVNhZmVQcm9wZXJ0eSh7bmdQaXBlRGVmOiBnZXRDbG9zdXJlU2FmZVByb3BlcnR5fSk7XG5leHBvcnQgY29uc3QgTkdfTU9EVUxFX0RFRiA9IGdldENsb3N1cmVTYWZlUHJvcGVydHkoe25nTW9kdWxlRGVmOiBnZXRDbG9zdXJlU2FmZVByb3BlcnR5fSk7XG5leHBvcnQgY29uc3QgTkdfQkFTRV9ERUYgPSBnZXRDbG9zdXJlU2FmZVByb3BlcnR5KHtuZ0Jhc2VEZWY6IGdldENsb3N1cmVTYWZlUHJvcGVydHl9KTtcblxuLyoqXG4gKiBJZiBhIGRpcmVjdGl2ZSBpcyBkaVB1YmxpYywgYmxvb21BZGQgc2V0cyBhIHByb3BlcnR5IG9uIHRoZSB0eXBlIHdpdGggdGhpcyBjb25zdGFudCBhc1xuICogdGhlIGtleSBhbmQgdGhlIGRpcmVjdGl2ZSdzIHVuaXF1ZSBJRCBhcyB0aGUgdmFsdWUuIFRoaXMgYWxsb3dzIHVzIHRvIG1hcCBkaXJlY3RpdmVzIHRvIHRoZWlyXG4gKiBibG9vbSBmaWx0ZXIgYml0IGZvciBESS5cbiAqL1xuLy8gVE9ETyhtaXNrbyk6IFRoaXMgaXMgd3JvbmcuIFRoZSBOR19FTEVNRU5UX0lEIHNob3VsZCBuZXZlciBiZSBtaW5pZmllZC5cbmV4cG9ydCBjb25zdCBOR19FTEVNRU5UX0lEID0gZ2V0Q2xvc3VyZVNhZmVQcm9wZXJ0eSh7X19OR19FTEVNRU5UX0lEX186IGdldENsb3N1cmVTYWZlUHJvcGVydHl9KTtcbiJdfQ==
