@@ -1,0 +1,126 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * Represents a component created by a `ComponentFactory`.
+ * Provides access to the component instance and related objects,
+ * and provides the means of destroying the instance.
+ *
+ * \@publicApi
+ * @abstract
+ * @template C
+ */
+export class ComponentRef {
+}
+if (false) {
+    /**
+     * The host or anchor [element](guide/glossary#element) for this component instance.
+     * @abstract
+     * @return {?}
+     */
+    ComponentRef.prototype.location = function () { };
+    /**
+     * The [dependency injector](guide/glossary#injector) for this component instance.
+     * @abstract
+     * @return {?}
+     */
+    ComponentRef.prototype.injector = function () { };
+    /**
+     * This component instance.
+     * @abstract
+     * @return {?}
+     */
+    ComponentRef.prototype.instance = function () { };
+    /**
+     * The [host view](guide/glossary#view-tree) defined by the template
+     * for this component instance.
+     * @abstract
+     * @return {?}
+     */
+    ComponentRef.prototype.hostView = function () { };
+    /**
+     * The change detector for this component instance.
+     * @abstract
+     * @return {?}
+     */
+    ComponentRef.prototype.changeDetectorRef = function () { };
+    /**
+     * The component type.
+     * @abstract
+     * @return {?}
+     */
+    ComponentRef.prototype.componentType = function () { };
+    /**
+     * Destroys the component instance and all of the data structures associated with it.
+     * @abstract
+     * @return {?}
+     */
+    ComponentRef.prototype.destroy = function () { };
+    /**
+     * A lifecycle hook that provides additional developer-defined cleanup
+     * functionality for the component.
+     * @abstract
+     * @param {?} callback A handler function that cleans up developer-defined data
+     * associated with this component. Called when the `destroy()` method is invoked.
+     * @return {?}
+     */
+    ComponentRef.prototype.onDestroy = function (callback) { };
+}
+/**
+ * \@publicApi
+ * @abstract
+ * @template C
+ */
+export class ComponentFactory {
+}
+if (false) {
+    /**
+     * The component's HTML selector.
+     * @abstract
+     * @return {?}
+     */
+    ComponentFactory.prototype.selector = function () { };
+    /**
+     * The component's type
+     * @abstract
+     * @return {?}
+     */
+    ComponentFactory.prototype.componentType = function () { };
+    /**
+     * Selector for all <ng-content> elements in the component.
+     * @abstract
+     * @return {?}
+     */
+    ComponentFactory.prototype.ngContentSelectors = function () { };
+    /**
+     * The inputs of the component.
+     * @abstract
+     * @return {?}
+     */
+    ComponentFactory.prototype.inputs = function () { };
+    /**
+     * The outputs of the component.
+     * @abstract
+     * @return {?}
+     */
+    ComponentFactory.prototype.outputs = function () { };
+    /**
+     * Creates a new component.
+     * @abstract
+     * @param {?} injector
+     * @param {?=} projectableNodes
+     * @param {?=} rootSelectorOrNode
+     * @param {?=} ngModule
+     * @return {?}
+     */
+    ComponentFactory.prototype.create = function (injector, projectableNodes, rootSelectorOrNode, ngModule) { };
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY29tcG9uZW50X2ZhY3RvcnkuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi8uLi8uLi9wYWNrYWdlcy9jb3JlL3NyYy9saW5rZXIvY29tcG9uZW50X2ZhY3RvcnkudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUF1QkEsTUFBTSxPQUFnQixZQUFZO0NBNENqQzs7Ozs7OztJQXhDQyxrREFBb0M7Ozs7OztJQUtwQyxrREFBa0M7Ozs7OztJQUtsQyxrREFBMkI7Ozs7Ozs7SUFNM0Isa0RBQWlDOzs7Ozs7SUFLakMsMkRBQW9EOzs7Ozs7SUFLcEQsdURBQXdDOzs7Ozs7SUFLeEMsaURBQXlCOzs7Ozs7Ozs7SUFRekIsMkRBQTZDOzs7Ozs7O0FBTS9DLE1BQU0sT0FBZ0IsZ0JBQWdCO0NBMkJyQzs7Ozs7OztJQXZCQyxzREFBZ0M7Ozs7OztJQUloQywyREFBd0M7Ozs7OztJQUl4QyxnRUFBNEM7Ozs7OztJQUk1QyxvREFBa0U7Ozs7OztJQUlsRSxxREFBbUU7Ozs7Ozs7Ozs7SUFJbkUsNEdBRWtEIiwic291cmNlc0NvbnRlbnQiOlsiLyoqXG4gKiBAbGljZW5zZVxuICogQ29weXJpZ2h0IEdvb2dsZSBJbmMuIEFsbCBSaWdodHMgUmVzZXJ2ZWQuXG4gKlxuICogVXNlIG9mIHRoaXMgc291cmNlIGNvZGUgaXMgZ292ZXJuZWQgYnkgYW4gTUlULXN0eWxlIGxpY2Vuc2UgdGhhdCBjYW4gYmVcbiAqIGZvdW5kIGluIHRoZSBMSUNFTlNFIGZpbGUgYXQgaHR0cHM6Ly9hbmd1bGFyLmlvL2xpY2Vuc2VcbiAqL1xuXG5pbXBvcnQge0NoYW5nZURldGVjdG9yUmVmfSBmcm9tICcuLi9jaGFuZ2VfZGV0ZWN0aW9uL2NoYW5nZV9kZXRlY3Rpb24nO1xuaW1wb3J0IHtJbmplY3Rvcn0gZnJvbSAnLi4vZGkvaW5qZWN0b3InO1xuaW1wb3J0IHtUeXBlfSBmcm9tICcuLi9pbnRlcmZhY2UvdHlwZSc7XG5cbmltcG9ydCB7RWxlbWVudFJlZn0gZnJvbSAnLi9lbGVtZW50X3JlZic7XG5pbXBvcnQge05nTW9kdWxlUmVmfSBmcm9tICcuL25nX21vZHVsZV9mYWN0b3J5JztcbmltcG9ydCB7Vmlld1JlZn0gZnJvbSAnLi92aWV3X3JlZic7XG5cbi8qKlxuICogUmVwcmVzZW50cyBhIGNvbXBvbmVudCBjcmVhdGVkIGJ5IGEgYENvbXBvbmVudEZhY3RvcnlgLlxuICogUHJvdmlkZXMgYWNjZXNzIHRvIHRoZSBjb21wb25lbnQgaW5zdGFuY2UgYW5kIHJlbGF0ZWQgb2JqZWN0cyxcbiAqIGFuZCBwcm92aWRlcyB0aGUgbWVhbnMgb2YgZGVzdHJveWluZyB0aGUgaW5zdGFuY2UuXG4gKlxuICogQHB1YmxpY0FwaVxuICovXG5leHBvcnQgYWJzdHJhY3QgY2xhc3MgQ29tcG9uZW50UmVmPEM+IHtcbiAgLyoqXG4gICAqIFRoZSBob3N0IG9yIGFuY2hvciBbZWxlbWVudF0oZ3VpZGUvZ2xvc3NhcnkjZWxlbWVudCkgZm9yIHRoaXMgY29tcG9uZW50IGluc3RhbmNlLlxuICAgKi9cbiAgYWJzdHJhY3QgZ2V0IGxvY2F0aW9uKCk6IEVsZW1lbnRSZWY7XG5cbiAgLyoqXG4gICAqIFRoZSBbZGVwZW5kZW5jeSBpbmplY3Rvcl0oZ3VpZGUvZ2xvc3NhcnkjaW5qZWN0b3IpIGZvciB0aGlzIGNvbXBvbmVudCBpbnN0YW5jZS5cbiAgICovXG4gIGFic3RyYWN0IGdldCBpbmplY3RvcigpOiBJbmplY3RvcjtcblxuICAvKipcbiAgICogVGhpcyBjb21wb25lbnQgaW5zdGFuY2UuXG4gICAqL1xuICBhYnN0cmFjdCBnZXQgaW5zdGFuY2UoKTogQztcblxuICAvKipcbiAgICogVGhlIFtob3N0IHZpZXddKGd1aWRlL2dsb3NzYXJ5I3ZpZXctdHJlZSkgZGVmaW5lZCBieSB0aGUgdGVtcGxhdGVcbiAgICogZm9yIHRoaXMgY29tcG9uZW50IGluc3RhbmNlLlxuICAgKi9cbiAgYWJzdHJhY3QgZ2V0IGhvc3RWaWV3KCk6IFZpZXdSZWY7XG5cbiAgLyoqXG4gICAqIFRoZSBjaGFuZ2UgZGV0ZWN0b3IgZm9yIHRoaXMgY29tcG9uZW50IGluc3RhbmNlLlxuICAgKi9cbiAgYWJzdHJhY3QgZ2V0IGNoYW5nZURldGVjdG9yUmVmKCk6IENoYW5nZURldGVjdG9yUmVmO1xuXG4gIC8qKlxuICAgKiBUaGUgY29tcG9uZW50IHR5cGUuXG4gICAqL1xuICBhYnN0cmFjdCBnZXQgY29tcG9uZW50VHlwZSgpOiBUeXBlPGFueT47XG5cbiAgLyoqXG4gICAqIERlc3Ryb3lzIHRoZSBjb21wb25lbnQgaW5zdGFuY2UgYW5kIGFsbCBvZiB0aGUgZGF0YSBzdHJ1Y3R1cmVzIGFzc29jaWF0ZWQgd2l0aCBpdC5cbiAgICovXG4gIGFic3RyYWN0IGRlc3Ryb3koKTogdm9pZDtcblxuICAvKipcbiAgICogQSBsaWZlY3ljbGUgaG9vayB0aGF0IHByb3ZpZGVzIGFkZGl0aW9uYWwgZGV2ZWxvcGVyLWRlZmluZWQgY2xlYW51cFxuICAgKiBmdW5jdGlvbmFsaXR5IGZvciB0aGUgY29tcG9uZW50LlxuICAgKiBAcGFyYW0gY2FsbGJhY2sgQSBoYW5kbGVyIGZ1bmN0aW9uIHRoYXQgY2xlYW5zIHVwIGRldmVsb3Blci1kZWZpbmVkIGRhdGFcbiAgICogYXNzb2NpYXRlZCB3aXRoIHRoaXMgY29tcG9uZW50LiBDYWxsZWQgd2hlbiB0aGUgYGRlc3Ryb3koKWAgbWV0aG9kIGlzIGludm9rZWQuXG4gICAqL1xuICBhYnN0cmFjdCBvbkRlc3Ryb3koY2FsbGJhY2s6IEZ1bmN0aW9uKTogdm9pZDtcbn1cblxuLyoqXG4gKiBAcHVibGljQXBpXG4gKi9cbmV4cG9ydCBhYnN0cmFjdCBjbGFzcyBDb21wb25lbnRGYWN0b3J5PEM+IHtcbiAgLyoqXG4gICAqIFRoZSBjb21wb25lbnQncyBIVE1MIHNlbGVjdG9yLlxuICAgKi9cbiAgYWJzdHJhY3QgZ2V0IHNlbGVjdG9yKCk6IHN0cmluZztcbiAgLyoqXG4gICAqIFRoZSBjb21wb25lbnQncyB0eXBlXG4gICAqL1xuICBhYnN0cmFjdCBnZXQgY29tcG9uZW50VHlwZSgpOiBUeXBlPGFueT47XG4gIC8qKlxuICAgKiBTZWxlY3RvciBmb3IgYWxsIDxuZy1jb250ZW50PiBlbGVtZW50cyBpbiB0aGUgY29tcG9uZW50LlxuICAgKi9cbiAgYWJzdHJhY3QgZ2V0IG5nQ29udGVudFNlbGVjdG9ycygpOiBzdHJpbmdbXTtcbiAgLyoqXG4gICAqIFRoZSBpbnB1dHMgb2YgdGhlIGNvbXBvbmVudC5cbiAgICovXG4gIGFic3RyYWN0IGdldCBpbnB1dHMoKToge3Byb3BOYW1lOiBzdHJpbmcsIHRlbXBsYXRlTmFtZTogc3RyaW5nfVtdO1xuICAvKipcbiAgICogVGhlIG91dHB1dHMgb2YgdGhlIGNvbXBvbmVudC5cbiAgICovXG4gIGFic3RyYWN0IGdldCBvdXRwdXRzKCk6IHtwcm9wTmFtZTogc3RyaW5nLCB0ZW1wbGF0ZU5hbWU6IHN0cmluZ31bXTtcbiAgLyoqXG4gICAqIENyZWF0ZXMgYSBuZXcgY29tcG9uZW50LlxuICAgKi9cbiAgYWJzdHJhY3QgY3JlYXRlKFxuICAgICAgaW5qZWN0b3I6IEluamVjdG9yLCBwcm9qZWN0YWJsZU5vZGVzPzogYW55W11bXSwgcm9vdFNlbGVjdG9yT3JOb2RlPzogc3RyaW5nfGFueSxcbiAgICAgIG5nTW9kdWxlPzogTmdNb2R1bGVSZWY8YW55Pik6IENvbXBvbmVudFJlZjxDPjtcbn1cbiJdfQ==
