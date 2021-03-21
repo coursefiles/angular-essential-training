@@ -6,7 +6,11 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./media-item.component.css']
 })
 export class MediaItemComponent {
+<<<<<<< Updated upstream
   @Input() mediaItem;
+=======
+  @Input() mediaItem; 
+>>>>>>> Stashed changes
 
   onDelete() {
     console.log('deleted');
