@@ -7,20 +7,20 @@
   <ul>
     <li>
       <label for="medium">Medium</label>
-      <select name="medium" id="medium" formControlName='medium'>
-        <option *ngFor="let medium of lookupLists.mediums" value={{medium}}>{{ medium }}</option>
+      <select name="medium" id="medium" formControlName="medium">
+        <option *ngFor="let medium of lookupLists.mediums" value="{{medium}}">{{medium}}</option>
       </select>
     </li>
     <li>
       <label for="name">Name</label>
-      <input type="text" name="name" id="name" formControlName='name'>
+      <input type="text" name="name" id="name" formControlName="name">
       <div *ngIf="form.get('name').hasError('pattern')" class="error">
         Name has invalid characters
       </div>
     </li>
     <li>
       <label for="category">Category</label>
-      <select name="category" id="category" formControlName='category'>
+      <select name="category" id="category" formControlName="category">
         <option value="Action">Action</option>
         <option value="Science Fiction">Science Fiction</option>
         <option value="Comedy">Comedy</option>
@@ -31,9 +31,12 @@
     </li>
     <li>
       <label for="year">Year</label>
-      <input type="text" name="year" id="year" maxlength="4" formControlName='year'>
+      <input type="text" name="year" id="year" maxlength="4" formControlName="year">
       <div *ngIf="form.get('year').errors as yearErrors" class="error">
-        must be beetween {{ yearErrors.year.min}} - {{ yearErrors.year.max }}
+        Must be between 
+        {{yearErrors.year.min}}
+        and 
+        {{yearErrors.year.max}}
       </div>
     </li>
   </ul>
