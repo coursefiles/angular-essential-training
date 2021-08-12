@@ -1,0 +1,10 @@
+<header>
+  <div *ngIf="mediaItems">{{ mediaItems | categoryList }}</div>
+</header>
+<section>
+  <mw-media-item 
+    [ngClass]="{'medium-movies': mediaItem.medium==='Movies', 'medium-series':mediaItem.medium==='Series'}"
+    *ngFor="let mediaItem of mediaItems"
+    [mediaItem]="mediaItem"
+    (delete)="onMediaItemDelete($event)"></mw-media-item>
+</section>
