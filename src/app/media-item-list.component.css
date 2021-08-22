@@ -1,0 +1,40 @@
+:host {
+  display: flex;
+  height: calc(100% - 95px);
+  flex-direction: column;
+  padding: 10px;
+}
+nav a {
+  cursor: pointer;
+}
+header {
+  color: #c6c5c3;
+}
+header.medium-movies {
+  color: #53ace4;
+}
+header.medium-series {
+  color: #45bf94;
+}
+header > h2 {
+  font-size: 1.4em;
+}
+header > h2.error {
+  color: #d93a3e;
+}
+section {
+  flex: 1;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+}
+section > media-item {
+  margin: 10px;
+}
+footer {
+  text-align: right;
+}
+footer .icon {
+  width: 64px;
+  height: 64px;
+}
