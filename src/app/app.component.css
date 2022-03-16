@@ -1,0 +1,8 @@
+h1 {
+  color: white;
+}
+.description {
+  color: rgb(102, 255, 0);
+  padding: 5px;
+  font-style: italic;
+}
