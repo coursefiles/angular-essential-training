@@ -1,4 +1,4 @@
-# Angular Essential Training test
+# Angular Essential Training test-Anuj
 
 This is the repository for my course **Angular Essential Training**  
 The full course is available at [LinkedIn Learning](https://www.linkedin.com/learning) and [lynda.com](https://lynda.com).  
