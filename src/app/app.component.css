@@ -1,0 +1,22 @@
+section{
+  padding: 15px;
+  border: #ffff 1px solid;
+}
+
+header{
+  padding: 15px;
+  border: #ffff 1px solid;
+
+}
+
+h1, .description {
+  color: #ffff;
+}
+
+h1{
+  font-size: 30px;
+  font-weight: 800;
+}
+
+
+

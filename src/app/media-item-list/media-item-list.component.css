@@ -1,0 +1,11 @@
+section{
+  color: #ffff;
+  display: flex;
+  justify-content: space-around;
+}
+
+section header{
+  margin: 15px 0 15px 0;
+}
+
+
