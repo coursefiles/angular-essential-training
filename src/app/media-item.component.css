@@ -5,6 +5,7 @@ section {
 .card-container {
   padding: 15px;
   margin-top: 10px;
+  margin-right: 10px;
   border: #ffff 1px solid;
   width: 200px;
   height: 250px;

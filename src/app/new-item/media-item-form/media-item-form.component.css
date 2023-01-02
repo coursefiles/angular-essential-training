@@ -48,3 +48,18 @@ button{
 button:hover{
   cursor: pointer;
 }
+
+
+.ng-pristine .name{
+  display: none;
+}
+
+.ng-pristine .year{
+  display: none;
+}
+
+.error {
+  color: red;
+  font-size: 15px;
+  margin: 10px 0 0 20px;
+}

@@ -1,11 +1,46 @@
 section{
   color: #ffff;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
+
+
 
 section header{
   margin: 15px 0 15px 0;
 }
 
+
+footer{
+  display: flex;
+  justify-content: flex-end;
+}
+i{
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  margin-top: 25px;
+  margin-right: 15px;
+  border: #fff 1px solid;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: green;
+  box-shadow: 5px 5px 5px rgb(28, 28, 28);
+}
+
+i:hover{
+  cursor: pointer;
+  color: black;
+  transform: scale(1.3);
+  transition: 0.5s;
+  border: black 1px solid;
+}
+
+a{
+  text-decoration: none;
+}
 

@@ -3,11 +3,21 @@
     <h1>Hello World</h1>
     <p class="description">This is a web app</p>
   </header>
-  <media-item-form></media-item-form>
-  <media-item-list></media-item-list>
+
+  <nav>
+    <a routerLink="/">
+      <i class="fa fa-sharp fa-bars"></i>
+    </a>
+    <a routerLink="/Movies">
+      <i class="fa fa-film"></i>
+    </a>
+    <a routerLink="/Series">
+      <i class="fa fa-sharp fa-headphones"></i>
+    </a>
+  </nav>
+
+  <!-- <media-item-form></media-item-form>
+  <media-item-list></media-item-list> -->
+  <router-outlet></router-outlet>
 </section>
 
-
-<!--
-<media-item (delete)="onMediaItemDelete($event)"
-[mediaItem]="firstMediaItem"></media-item> -->
