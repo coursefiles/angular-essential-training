@@ -1,0 +1,17 @@
+<section>
+  <div class="card-container">
+    <h2>{{ mediaItem.name | uppercase }}</h2>
+    <div *ngIf="mediaItem.watchedOn" class="watched">
+      Watched on {{ mediaItem.watchedOn | date: 'shortDate' }}
+    </div>
+    <div>{{ mediaItem.category }}</div>
+    <div>{{ mediaItem.year }}</div>
+    <div class="tools">
+      <span [mwFavorite]="mediaItem.isFavorite" class="favorite">
+        <i class="fa fa-solid fa-heart"></i>
+        </span>
+      <a (click)="onDelete()" class="delete">Delete</a>
+      <a (click)="onWatch()" class="details">Watch</a>
+  </div>
+</div>
+</section>

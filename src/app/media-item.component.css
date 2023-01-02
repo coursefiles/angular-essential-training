@@ -1,0 +1,71 @@
+section {
+  color: #ffff;
+}
+
+.card-container {
+  padding: 15px;
+  margin-top: 10px;
+  margin-right: 10px;
+  border: #ffff 1px solid;
+  width: 200px;
+  height: 250px;
+  /* background-color: #373f4b; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgb(29, 28, 28);
+}
+
+/* .medium-series{
+  background-color: aliceblue;
+  }
+
+.medium-movies{
+  background-color: aquamarine;
+  } */
+
+
+h2 {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+div {
+  padding-top: 10px;
+}
+
+.tools {
+  height: 100px;
+  display: flex;
+  justify-content:space-around;
+  align-items: flex-end;
+  margin: 50px 0 15px 0;
+}
+
+.tools .is-favorite{
+  color: red;
+}
+
+a, span {
+  border: #ffff 1px solid;
+  border-radius: 5px;
+  padding: 10px 10px;
+  box-shadow: 5px 5px 5px rgb(28, 28, 28);
+}
+
+span:hover{
+  cursor: pointer;
+}
+
+a:hover{
+  cursor: pointer;
+}
+
+.delete {
+  background-color: red;
+}
+
+.details {
+  background-color: green;
+}

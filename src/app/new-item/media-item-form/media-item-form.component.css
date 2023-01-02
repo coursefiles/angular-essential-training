@@ -1,0 +1,65 @@
+section{
+  border: solid 1px white;
+  width: 33%;
+  height: auto;
+  padding: 20px 0 20px 0;
+
+  color: #ffff;
+  margin-top: 20px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgb(28, 28, 28);
+}
+
+h2{
+font-size: 25px;
+font-weight: bold;
+margin-left: 10px;
+}
+
+section form ul{
+  list-style: none;
+  margin-top: 15px;
+}
+
+
+
+section form label{
+  font-size: 15px;
+  color: white;
+  margin: 0 20px;
+}
+
+
+section form input, select{
+ background-color: rgb(198, 198, 198);
+ border-radius: 5px;
+  width: 200px;
+  margin-top: 15px;
+}
+
+button{
+  margin: 40px 10px 10px 10px;
+  padding: 10px;
+  width: 100px;
+  background-color: rgb(225, 194, 17);
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgb(28, 28, 28);
+}
+button:hover{
+  cursor: pointer;
+}
+
+
+.ng-pristine .name{
+  display: none;
+}
+
+.ng-pristine .year{
+  display: none;
+}
+
+.error {
+  color: red;
+  font-size: 15px;
+  margin: 10px 0 0 20px;
+}

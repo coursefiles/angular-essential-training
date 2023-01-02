@@ -1,0 +1,50 @@
+section{
+  padding: 15px;
+  border: #ffff 1px solid;
+}
+
+header{
+  padding: 15px;
+  border: #ffff 1px solid;
+
+}
+
+h1, .description {
+  color: #ffff;
+}
+
+h1{
+  font-size: 30px;
+  font-weight: 800;
+}
+
+nav{
+  display: inline-flex;
+}
+i{
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  margin-top: 25px;
+  margin-right: 15px;
+  border: #fff 1px solid;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(68, 68, 68);
+  box-shadow: 5px 5px 5px rgb(28, 28, 28);
+}
+
+i:hover{
+  cursor: pointer;
+  color: black;
+  border: black 1px solid;
+  transform: scale(1.3);
+  transition: 0.5s;
+}
+
+a{
+  text-decoration: none;
+}
